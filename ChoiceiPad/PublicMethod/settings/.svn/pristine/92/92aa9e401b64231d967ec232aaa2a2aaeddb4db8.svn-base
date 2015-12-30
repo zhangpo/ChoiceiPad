@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Chinese</key>
+	<dict>
+		<key>Additions</key>
+		<string>附加项</string>
+		<key>Send Succeeded</key>
+		<string>菜品已上传</string>
+		<key>Send Failed</key>
+		<string>菜品上传失败</string>
+		<key>Additions:</key>
+		<string>附加项:</string>
+		<key>AdditionsConfiguration</key>
+		<string>附加项设置</string>
+		<key>Back</key>
+		<string>返回</string>
+		<key>Type:</key>
+		<string>类型:</string>
+		<key>All</key>
+		<string>全部</string>
+		<key>Print</key>
+		<string>打印</string>
+		<key>Table:</key>
+		<string>台位:</string>
+		<key>Area</key>
+		<string>区域</string>
+		<key>Floor</key>
+		<string>楼层</string>
+		<key>Change Table Succeed</key>
+		<string>换台成功</string>
+		<key>Cancel Table Succeed</key>
+		<string>取消开台成功</string>
+		<key>Cancel Table Failed</key>
+		<string>取消开台失败</string>
+		<key>Status</key>
+		<string>状态</string>
+		<key>QUERY</key>
+		<string>查询单</string>
+		<key>Print Query Succeed</key>
+		<string>打印查询单</string>
+		<key>TAB</key>
+		<string>结账单</string>
+		<key>ACCOUNT</key>
+		<string>自动打印查询单</string>
+		<key>Cancel</key>
+		<string>取消</string>
+		<key>Send Now</key>
+		<string>即起上传</string>
+		<key>Cancel Table</key>
+		<string>取消开台</string>
+		<key>Reason:</key>
+		<string>原因</string>
+		<key>Send Order</key>
+		<string>发送菜品</string>
+		<key>User and Password could not be empty</key>
+		<string>工号或密码不能为空</string>
+		<key>User or Password or Table could not be empty</key>
+		<string>工号或台号不能为空</string>
+		<key>User could not be empty</key>
+		<string>工号不能为空</string>
+		<key>Please type again and retry</key>
+		<string>请重新输入后重试</string>
+		<key>Send Hold</key>
+		<string>叫起上传</string>
+		<key>From Table:</key>
+		<string>当前台位:</string>
+		<key>To Table:</key>
+		<string>目标台位:</string>
+		<key>ChuckFailed</key>
+		<string>退菜失败</string>
+		<key>People:</key>
+		<string>人数</string>
+		<key>ChuckSucceed</key>
+		<string>退菜成功</string>
+		<key>List Table</key>
+		<string>查询台位</string>
+		<key>User:</key>
+		<string>工号:</string>
+		<key>Password:</key>
+		<string>密码:</string>
+		<key>Area:</key>
+		<string>区域:</string>
+		<key>Floor:</key>
+		<string>楼层:</string>
+		<key>Change Table</key>
+		<string>换台</string>
+		<key>Chuck</key>
+		<string>退菜</string>
+		<key>Common Additions</key>
+		<string>公共附加项</string>
+		<key>Table Operation</key>
+		<string>台位操作</string>
+		<key>CommonAdditions:</key>
+		<string>公共附加项:</string>
+		<key>Count</key>
+		<string>数量</string>
+		<key>Count:</key>
+		<string>数量</string>
+		<key>Date</key>
+		<string>日期</string>
+		<key>DATE</key>
+		<string>日期</string>
+		<key>Date:</key>
+		<string>日期:</string>
+		<key>Query</key>
+		<string>查询</string>
+		<key>DATE:</key>
+		<string>日期: %@</string>
+		<key>DeleteAll</key>
+		<string>删除所有</string>
+		<key>Detail</key>
+		<string>详情</string>
+		<key>Edit</key>
+		<string>编辑</string>
+		<key>EditAdditions</key>
+		<string>编辑附加项</string>
+		<key>Error</key>
+		<string>错误</string>
+		<key>Food Ordered</key>
+		<string>菜品已经被添加</string>
+		<key>FoodName</key>
+		<string>品名</string>
+		<key>Gogo</key>
+		<string>催菜</string>
+		<key>GogoAlert</key>
+		<string>请选择要催的菜!</string>
+		<key>Change Table Failed</key>
+		<string>换台失败</string>
+		<key>GogoFailed</key>
+		<string>催菜失败</string>
+		<key>GogoSucceed</key>
+		<string>催菜成功</string>
+		<key>Info</key>
+		<string>资料</string>
+		<key>LangCode</key>
+		<string>cn</string>
+		<key>LanguageChangedMessage</key>
+		<string>语言被更改,cMenu即将关闭以使更改生效，请重新打开cMenu.</string>
+		<key>LanguageChangedTitle</key>
+		<string>cMenu即将关闭</string>
+		<key>Loading %@</key>
+		<string>正在载入 %@</string>
+		<key>Min</key>
+		<string>分钟</string>
+		<key>minutes</key>
+		<string>分钟</string>
+		<key>More</key>
+		<string>更多</string>
+		<key>NetworkFailedMessage</key>
+		<string>无法连接到服务器，请检查连接</string>
+		<key>NetworkFailedOK</key>
+		<string>确定</string>
+		<key>NetworkFailedTitle</key>
+		<string>抱歉</string>
+		<key>News</key>
+		<string>新闻</string>
+		<key>NoEntry</key>
+		<string>抱歉,没有可用内容</string>
+		<key>NoFoodOrderedAlert</key>
+		<string>没有已点菜品，请先点菜再发送菜品</string>
+		<key>NoFoodToChuckAlert</key>
+		<string>请选择要退的菜!</string>
+		<key>OK</key>
+		<string>确定</string>
+		<key>OrderedFood</key>
+		<string>已点菜品</string>
+		<key>Price</key>
+		<string>价格</string>
+		<key>PrintFailed</key>
+		<string>单据打印失败</string>
+		<key>PrintQuery</key>
+		<string>打印单据</string>
+		<key>PrintSucceed</key>
+		<string>单据打印成功</string>
+		<key>QueryBill</key>
+		<string>查询账单</string>
+		<key>QueryTitle</key>
+		<string>共点菜品: %d 道     总计:￥%.2f     附加项:￥%.2f</string>
+		<key>QueryTitle2</key>
+		<string>共点菜品: %.1f 道     总计:￥%.2f    账单号:%@</string>
+		<key>Send</key>
+		<string>发送</string>
+		<key>Subtotal</key>
+		<string>小计</string>
+		<key>This feature is unavailable with your current version of the application.</key>
+		<string>当前程序版本暂不支持此功能。</string>
+		<key>Total</key>
+		<string>总共</string>
+		<key>Table</key>
+		<string>台位</string>
+		<key>Unit</key>
+		<string>单位</string>
+		<key>VALUE</key>
+		<string>价值</string>
+		<key>Value</key>
+		<string>价值</string>
+	</dict>
+	<key>English</key>
+	<dict>
+		<key>Additions</key>
+		<string>Condiment</string>
+		<key>Additions:</key>
+		<string>Condiments:</string>
+		<key>AdditionsConfiguration</key>
+		<string>Choose Condiment</string>
+		<key>ADOP</key>
+		<string>ADVANCED OPTIONS</string>
+		<key>Table</key>
+		<string>Table</string>
+		<key>Back</key>
+		<string>Back</string>
+		<key>Cancel</key>
+		<string>Cancel</string>
+		<key>ChuckFailed</key>
+		<string>Void Failed</string>
+		<key>ChuckSucceed</key>
+		<string>Void Succeed</string>
+		<key>Chuck</key>
+		<string>Chuck</string>
+		<key>Common Additions</key>
+		<string>Common Additions</string>
+		<key>CommonAdditions:</key>
+		<string>Commond Additions:</string>
+		<key>Count</key>
+		<string>Count</string>
+		<key>Count:</key>
+		<string>Count:</string>
+		<key>Date</key>
+		<string>Date</string>
+		<key>DATE</key>
+		<string>DATE</string>
+		<key>Date:</key>
+		<string>Date:</string>
+		<key>DATE:</key>
+		<string>DATE: %@</string>
+		<key>DeleteAll</key>
+		<string>Delete All</string>
+		<key>Detail</key>
+		<string>Detail</string>
+		<key>Down:</key>
+		<string>Down:</string>
+		<key>Edit</key>
+		<string>Edit</string>
+		<key>EditAdditions</key>
+		<string>Edit Additions</string>
+		<key>Error</key>
+		<string>Error</string>
+		<key>Food Ordered</key>
+		<string>Food Ordered Successful</string>
+		<key>FoodName</key>
+		<string>Name</string>
+		<key>Gogo</key>
+		<string>Chase</string>
+		<key>GogoAlert</key>
+		<string>Please select the food you want to gogo!</string>
+		<key>GogoFailed</key>
+		<string>Gogo Failed</string>
+		<key>GogoSucceed</key>
+		<string>Gogo Succeed</string>
+		<key>Info</key>
+		<string>Info</string>
+		<key>LangCode</key>
+		<string>en</string>
+		<key>LanguageChangedMessage</key>
+		<string>Your language settings have been changed. Please select “OK” and restart the cMenu app for the change to take effect.</string>
+		<key>LanguageChangedTitle</key>
+		<string>cMenu App Closing</string>
+		<key>Loading %@</key>
+		<string>Loading %@</string>
+		<key>NoFoodOrderedAlert</key>
+		<string>No food ordered,please order first.</string>
+		<key>NoFoodToChuckAlert</key>
+		<string>Please select the food you want to chuck!</string>
+		<key>OK</key>
+		<string>OK</string>
+		<key>Open:</key>
+		<string>Open:</string>
+		<key>OrderedFood</key>
+		<string>Ordered Items</string>
+		<key>Price</key>
+		<string>Price</string>
+		<key>PrintFailed</key>
+		<string>Print Failed</string>
+		<key>PrintQuery</key>
+		<string>PrintQuery</string>
+		<key>PrintSucceed</key>
+		<string>Print Succeed</string>
+		<key>QueryBill</key>
+		<string>Check</string>
+		<key>QueryTitle</key>
+		<string>Ordered: %d     Total Price:￥%.2f     Addtions Price:￥%.2f</string>
+		<key>QueryTitle2</key>
+		<string>Ordered: %d     Total Price:￥%.2f    Tab:%@</string>
+		<key>Send</key>
+		<string>Send</string>
+		<key>Send Failed</key>
+		<string>Send Failed</string>
+		<key>Send Succeed</key>
+		<string>Send Succeed</string>
+		<key>Send Now</key>
+		<string>Send Now</string>
+		<key>Send Hold</key>
+		<string>Send Hold</string>
+		<key>Send Order</key>
+		<string>Send Order</string>
+		<key>List Table</key>
+		<string>Table Inquiry</string>
+		<key>Subtotal</key>
+		<string>Subtotal</string>
+		<key>Total</key>
+		<string>Total</string>
+		<key>Unit</key>
+		<string>Unit</string>
+		<key>VALUE</key>
+		<string>VALUE</string>
+		<key>Value</key>
+		<string>Value</string>
+	</dict>
+	<key>Language</key>
+	<string>Chinese</string>
+	<key>Traditional</key>
+	<dict>
+		<key>Additions</key>
+		<string>附加項</string>
+		<key>Additions:</key>
+		<string>附加項:</string>
+		<key>AdditionsConfiguration</key>
+		<string>附加項設置</string>
+		<key>Back</key>
+		<string>返回</string>
+		<key>Change Table Failed</key>
+		<string>換台失敗</string>
+		<key>Change Table Succeed</key>
+		<string>換台成功</string>
+		<key>Cancel</key>
+		<string>取消</string>
+		<key>Query</key>
+		<string>查詢</string>
+		<key>ChuckFailed</key>
+		<string>退菜失敗</string>
+		<key>ChuckSucceed</key>
+		<string>退菜成功</string>
+		<key>Chuck</key>
+		<string>退菜</string>
+		<key>Common Additions</key>
+		<string>公共附加項</string>
+		<key>CommonAdditions:</key>
+		<string>公共附加項:</string>
+		<key>Count</key>
+		<string>數量</string>
+		<key>Count:</key>
+		<string>數量</string>
+		<key>Date</key>
+		<string>日期</string>
+		<key>DATE</key>
+		<string>日期</string>
+		<key>DATE:</key>
+		<string>日期: %@</string>
+		<key>Date:</key>
+		<string>日期:</string>
+		<key>Table Operation</key>
+		<string>台位操作</string>
+		<key>DeleteAll</key>
+		<string>刪除所有</string>
+		<key>Detail</key>
+		<string>詳情</string>
+		<key>Edit</key>
+		<string>編輯</string>
+		<key>EditAdditions</key>
+		<string>編輯附加項</string>
+		<key>Error</key>
+		<string>錯誤</string>
+		<key>Food Ordered</key>
+		<string>菜品已經被添加</string>
+		<key>Table</key>
+		<string>台位</string>
+		<key>List Table</key>
+		<string>查詢台位</string>
+		<key>FoodName</key>
+		<string>品名</string>
+		<key>Gogo</key>
+		<string>催菜</string>
+		<key>GogoAlert</key>
+		<string>請選擇要催的菜!</string>
+		<key>User:</key>
+		<string>工號:</string>
+		<key>Password:</key>
+		<string>密碼:</string>
+		<key>Area:</key>
+		<string>區域:</string>
+		<key>People:</key>
+		<string>人數:</string>
+		<key>Floor:</key>
+		<string>樓層:</string>
+		<key>Reason:</key>
+		<string>原因:</string>
+		<key>GogoFailed</key>
+		<string>催菜失敗</string>
+		<key>GogoSucceed</key>
+		<string>催菜成功</string>
+		<key>Info</key>
+		<string>資料</string>
+		<key>LangCode</key>
+		<string>tw</string>
+		<key>LanguageChangedMessage</key>
+		<string>語言被更改,cMenu即將關閉以使更改生效，請重新打開cMenu.</string>
+		<key>LanguageChangedTitle</key>
+		<string>cMenu即將關閉</string>
+		<key>NoEntry</key>
+		<string>抱歉,沒有可用內容</string>
+		<key>Type:</key>
+		<string>類型:</string>
+		<key>Print</key>
+		<string>列印</string>
+		<key>QUERY</key>
+		<string>查詢單</string>
+		<key>Print Query Succeed</key>
+		<string>列印查詢單成功</string>
+		<key>Send Suceeded</key>
+		<string>菜品已上傳</string>
+		<key>Send Failed</key>
+		<string>菜品上傳失敗</string>
+		<key>Area</key>
+		<string>區域</string>
+		<key>Status</key>
+		<string>狀態</string>
+		<key>Table:</key>
+		<string>台位:</string>
+		<key>Floor</key>
+		<string>樓層</string>
+		<key>All</key>
+		<string>全部</string>
+		<key>TAB</key>
+		<string>結賬單</string>
+		<key>ACCOUNT</key>
+		<string>自動列印查詢單</string>
+		<key>Send Now</key>
+		<string>即起上传</string>
+		<key>Send Order</key>
+		<string>发送菜品</string>
+		<key>Send Hold</key>
+		<string>叫起上传</string>
+		<key>Change Table</key>
+		<string>換台</string>
+		<key>NoFoodOrderedAlert</key>
+		<string>沒有已點菜品，請先點菜再發送菜品</string>
+		<key>NoFoodToChuckAlert</key>
+		<string>請選擇要退的菜!</string>
+		<key>OK</key>
+		<string>確定</string>
+		<key>User and Password could not be empty</key>
+		<string>工號和密碼不能為空</string>
+		<key>User and Table could not be empty</key>
+		<string>工號和台號不能為空</string>
+		<key>User could not be empty</key>
+		<string>工號不能為空</string>
+		<key>Please type again and retry</key>
+		<string>請重新輸入後重試</string>
+		<key>OrderedFood</key>
+		<string>已點菜品</string>
+		<key>From Table:</key>
+		<string>當前台位:</string>
+		<key>Cancel Table</key>
+		<string>取消開台</string>
+		<key>Cancel Table Succeed</key>
+		<string>取消開台成功</string>
+		<key>Cancel Table Failed</key>
+		<string>取消開台失敗</string>
+		<key>To Table:</key>
+		<string>目標台位:</string>
+		<key>Price</key>
+		<string>價格</string>
+		<key>PrintFailed</key>
+		<string>單據列印失敗</string>
+		<key>PrintQuery</key>
+		<string>列印單據</string>
+		<key>PrintSucceed</key>
+		<string>單據列印成功</string>
+		<key>QueryBill</key>
+		<string>查詢賬單</string>
+		<key>QueryTitle</key>
+		<string>共點菜品: %d 道      總計:  ￥%.2f</string>
+		<key>QueryTitle2</key>
+		<string>共點菜品: %d 道      總計:  ￥%.2f    賬單號:%@</string>
+		<key>Send</key>
+		<string>發送</string>
+		<key>Subtotal</key>
+		<string>小計</string>
+		<key>Total</key>
+		<string>總共</string>
+		<key>Unit</key>
+		<string>單位</string>
+	</dict>
+</dict>
+</plist>

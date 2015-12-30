@@ -1,0 +1,65 @@
+//
+//  BSLogCell.h
+//  BookSystem
+//
+//  Created by Dream on 11-5-26.
+//  Copyright 2011年 __MyCompanyName__. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "BSAddtionView.h"
+
+#define kPriceTag       700
+#define kCountTag       701
+#define kNoPhotoOffset  60.0f
+@class BSLogCell;
+
+@protocol  BSLogCellDelegate
+-(void)cell:(BSLogCell *)cell present:(BOOL)ZS;
+- (void)cell:(BSLogCell *)cell countChanged:(float)count;
+- (void)cell:(BSLogCell *)cell priceChanged:(float)price;
+-(void)cell:(BSLogCell *)cell count:(float)count;
+- (void)cell:(BSLogCell *)cell additionChanged:(NSMutableArray *)additons;
+- (void)unitOfCellChanged:(BSLogCell *)cell;
+- (void)beingEditting:(BSLogCell *)cell;
+- (void)endEditting:(BSLogCell *)cell;
+-(void)additioncell:(BSLogCell *)cell;
+@end
+
+@interface BSLogCell : UITableViewCell <UITableViewDelegate,UITableViewDataSource,UIPickerViewDelegate,UIPickerViewDataSource,UIAlertViewDelegate,UISearchBarDelegate,UITextFieldDelegate,AdditionViewDelegate,AdditionViewDelegate>{
+    UIImageView *imgvFood;
+    UIButton *btnEdit,*btnDelete,*btnDetail;
+ //   UITextField *tfAddition;
+    UISearchBar *barAddition;
+//    UIView *vAddition;
+    UITableView *tvAddition;
+    
+//    __weak id<BSLogCellDelegate>delegate;
+    
+    float fCount,fPrice;
+    
+    BOOL bSelected;
+    
+    NSDictionary *dicInfo;
+    UIPopoverController *pop,*popCount;
+    
+    
+    NSArray *aryAdditions;
+    NSMutableArray *arySelectedAdditions,*aryCustomAddition;
+    NSMutableArray *arySearchMatched;
+    
+}
+@property BOOL bSelected;
+@property (nonatomic,weak)__weak id<BSLogCellDelegate> delegate;
+@property float fCount;
+@property (nonatomic,retain) NSDictionary *dicInfo;
+@property(nonatomic,assign)UIButton *btnAdd,*btnReduce,*jia,*jian;
+@property (nonatomic,strong) UILabel *lblName,*lblTotalPrice,*lblAddition,*lblAdditionPrice,*lblUnit,*lblSelected,*lb;
+@property (nonatomic,strong) UILabel *tfPrice,*tfCount,*lblLine;
+@property (nonatomic,retain) NSArray *aryAdditions;
+@property (nonatomic,retain) NSMutableArray *arySelectedAdditions,*aryCustomAddition,*arySearchMatched;
+- (void)setInfo:(NSDictionary *)info;
+@property (nonatomic,strong) NSIndexPath *indexPath;
+@property(nonatomic,strong)UITableView *supTableView;
+- (void)setAddition;
+@end

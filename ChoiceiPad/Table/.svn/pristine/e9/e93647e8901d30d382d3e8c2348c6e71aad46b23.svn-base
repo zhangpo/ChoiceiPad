@@ -1,0 +1,245 @@
+//
+//  BSOpenTableView.m
+//  BookSystem
+//
+//  Created by Dream on 11-7-13.
+//  Copyright 2011年 __MyCompanyName__. All rights reserved.
+//
+
+#import "BSOpenTableView.h"
+#import "CVLocalizationSetting.h"
+#import "Singleton.h"
+#import "AKsNetAccessClass.h"
+
+@implementation BSOpenTableView
+@synthesize delegate=_delegate,btn=_btn;
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        // Initialization code
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"ShowButton_image"]) {//判断设置里的版本
+            [self viewLoad1];
+            
+        }else{
+            [self viewLoad2];
+        }
+        
+    }
+    return self;
+}
+-(void)viewLoad1
+{
+    self.transform = CGAffineTransformIdentity;
+    [self setTitle:@"开台"];
+    lblPeople = [[UILabel alloc] initWithFrame:CGRectMake(15, 130, 80, 30)];
+    lblPeople.font=[UIFont italicSystemFontOfSize:20];
+    lblPeople.textAlignment = UITextAlignmentRight;
+    lblPeople.backgroundColor = [UIColor clearColor];
+    lblPeople.text = @"人数:";
+    [self addSubview:lblPeople];
+    [lblPeople release];
+    tfPeople = [[UITextField alloc] initWithFrame:CGRectMake(100, 130, 350, 30)];
+    tfPeople.borderStyle = UITextBorderStyleRoundedRect;
+    tfPeople.clearButtonMode=UITextFieldViewModeAlways;
+    [self addSubview:tfPeople];
+    btnConfirm = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    btnConfirm.frame = CGRectMake(105, 265, 100, 30);
+    [btnConfirm setTitle:@"确定" forState:UIControlStateNormal];
+    btnConfirm.titleLabel.font=[UIFont italicSystemFontOfSize:20];
+//    [btnConfirm setImage:[UIImage imageNamed:@"TableButtonRed.png"] forState:UIControlStateNormal];
+    [self addSubview:btnConfirm];
+    btnConfirm.tag = 700;
+    [btnConfirm addTarget:self action:@selector(confirm) forControlEvents:UIControlEventTouchUpInside];
+    
+    btnCancel = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    btnCancel.frame = CGRectMake(245, 265, 100, 30);
+    btnCancel.titleLabel.font=[UIFont italicSystemFontOfSize:20];
+    [btnCancel setTitle:@"取消" forState:UIControlStateNormal];
+//    [btnCancel setImage:[UIImage imageNamed:@"TableButtonRed.png"] forState:UIControlStateNormal];
+
+    [self addSubview:btnCancel];
+    btnCancel.tag = 701;
+    [btnCancel addTarget:self action:@selector(cancel) forControlEvents:UIControlEventTouchUpInside];
+}
+-(void)viewLoad2
+{
+    self.transform = CGAffineTransformIdentity;
+    [self setTitle:@"开台"];
+    lblUser = [[UILabel alloc] initWithFrame:CGRectMake(15, 80, 80, 40)];
+    lblUser.textAlignment = UITextAlignmentRight;
+    lblUser.backgroundColor = [UIColor clearColor];
+    lblUser.font=[UIFont fontWithName:@"ArialRoundedMTBold"size:20];
+    lblUser.text = @"先生:";
+    [self addSubview:lblUser];
+    [lblUser release];
+    
+    lblPeople = [[UILabel alloc] initWithFrame:CGRectMake(15, 130, 80, 40)];
+    lblPeople.textAlignment = UITextAlignmentRight;
+    lblPeople.backgroundColor = [UIColor clearColor];
+    lblPeople.font=[UIFont fontWithName:@"ArialRoundedMTBold"size:20];
+    lblPeople.text = @"女士:";
+    [self addSubview:lblPeople];
+    [lblPeople release];
+    tfUser = [[UITextField alloc] initWithFrame:CGRectMake(100, 80, 350, 40)];
+    tfPeople = [[UITextField alloc] initWithFrame:CGRectMake(100, 130, 350, 40)];
+    tfUser.clearButtonMode=UITextFieldViewModeAlways;
+    tfPeople.clearButtonMode=UITextFieldViewModeAlways;
+    tfUser.keyboardType=UIKeyboardTypeNumberPad;
+    tfUser.borderStyle = UITextBorderStyleRoundedRect;
+    tfPeople.borderStyle = UITextBorderStyleRoundedRect;
+    tfPeople.keyboardType=UIKeyboardTypeNumberPad;
+    tfPeople.delegate=self;
+    tfUser.delegate=self;
+    tfWaiter.delegate=self;
+    
+    [self addSubview:tfUser];
+    [self addSubview:tfPeople];
+    [tfUser release];
+    [tfPeople release];
+    _btn=[UIButton buttonWithType:UIButtonTypeCustom];
+    _btn.frame=CGRectMake(50, 180, 30, 30);
+    _btn.selected=NO;
+    [_btn setBackgroundImage:[UIImage imageNamed:@"select_no.png"] forState:UIControlStateNormal];
+    [_btn addTarget:self action:@selector(selectBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:_btn];
+    UILabel *lb=[[UILabel alloc] initWithFrame:CGRectMake(100, 180, 300, 40)];
+    lb.text=@"是否会员?";
+    lb.font=[UIFont fontWithName:@"ArialRoundedMTBold"size:25];
+    lb.backgroundColor=[UIColor clearColor];
+    lb.textColor=[UIColor redColor];
+    [self addSubview:lb];
+    [lb release];
+    btnConfirm = [UIButton buttonWithType:UIButtonTypeCustom];
+    btnConfirm.frame = CGRectMake(240, 265, 90, 40);
+    
+    [btnConfirm setTitle:@"确定" forState:UIControlStateNormal];
+    btnConfirm.titleLabel.textColor=[UIColor whiteColor];
+    btnConfirm.titleLabel.font=[UIFont fontWithName:@"ArialRoundedMTBold"size:20];
+    [btnConfirm setBackgroundImage:[UIImage imageNamed:@"TableButtonRed"] forState:UIControlStateNormal];
+    [self addSubview:btnConfirm];
+    btnConfirm.tag = 700;
+    [btnConfirm addTarget:self action:@selector(confirm) forControlEvents:UIControlEventTouchUpInside];
+    
+    btnCancel = [UIButton buttonWithType:UIButtonTypeCustom];
+    btnCancel.frame = CGRectMake(345, 265, 90, 40);
+    btnCancel.titleLabel.font=[UIFont fontWithName:@"ArialRoundedMTBold"size:20];
+    [btnCancel setBackgroundImage:[UIImage imageNamed:@"TableButtonRed"] forState:UIControlStateNormal];
+    [btnCancel setTitle:@"取消" forState:UIControlStateNormal];
+    btnCancel.titleLabel.textColor=[UIColor whiteColor];
+    [self addSubview:btnCancel];
+    btnCancel.tag = 701;
+    [btnCancel addTarget:self action:@selector(cancel) forControlEvents:UIControlEventTouchUpInside];
+    
+    //    tfUser.text = [[[NSUserDefaults standardUserDefaults] objectForKey:@"UserInfo"] objectForKey:@"username"];
+}
+
+
+- (void)dealloc
+{
+    self.delegate = nil;
+    [super dealloc];
+}
+
+-(void)selectBtnClick:(UIButton *)btn
+{
+    if (btn.selected) {
+        //[fmdb executeUpdate:@"updata "]
+        [btn setBackgroundImage:[UIImage imageNamed:@"select_no.png"] forState:UIControlStateNormal];
+          [AKsNetAccessClass sharedNetAccess].isVipShow=NO;
+        btn.selected=NO;
+    }
+    else
+    {
+        if ([tfPeople.text length]>0||[tfUser.text length]>0) {
+            [btn setBackgroundImage:[UIImage imageNamed:@"select_yes.png"] forState:UIControlStateNormal];
+            [AKsNetAccessClass sharedNetAccess].isVipShow=YES;
+            [AKsNetAccessClass sharedNetAccess].PeopleManNum=tfUser.text;
+            [AKsNetAccessClass sharedNetAccess].PeopleWomanNum=tfPeople.text;
+            [Singleton sharedSingleton].man=tfUser.text;
+            [Singleton sharedSingleton].woman=tfPeople.text;
+            [Singleton sharedSingleton].Seat=[AKsNetAccessClass sharedNetAccess].TableNum;
+            btn.selected=YES;
+        }
+        else
+        {
+            UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"提示" message:@"请录入人数" delegate:self cancelButtonTitle:@"确认" otherButtonTitles: nil];
+            [alert show];
+        }
+    }
+    
+}
+- (void)confirm{
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"ShowButton_image"]) {//判断设置里的版本
+        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+        [dic setObject:[[[NSUserDefaults standardUserDefaults] objectForKey:@"UserInfo"] objectForKey:@"name"] forKey:@"user"];
+        [dic setObject:@"0" forKey:@"waiter"];
+        if ([tfPeople.text length]>0)
+            [dic setObject:tfPeople.text forKey:@"man"];
+        [_delegate openTableWithOptions:dic];
+        
+    }else{
+        if ([tfPeople.text intValue]>0||[tfUser.text intValue]>0) {
+            NSMutableDictionary *dict=[NSMutableDictionary dictionary];
+            [Singleton sharedSingleton].man=tfUser.text;
+            [Singleton sharedSingleton].woman=tfPeople.text;
+            NSLog(@"%@",tfPeople.text);
+            if ([tfUser.text length]==0) {
+                tfUser.text=0;
+            }
+            if ([tfPeople.text length]==0)
+            {
+                tfPeople.text=0;
+            }
+            NSLog(@"%@",tfPeople.text);
+            [dict setValue:tfPeople.text forKey:@"woman"];
+            [dict setValue:tfUser.text forKey:@"man"];
+            [_delegate openTableWithOptions:dict];
+        }
+        else
+        {
+            UIAlertView *al=[[UIAlertView alloc] initWithTitle:@"提示" message:@"请录入人数" delegate:self cancelButtonTitle:@"确认" otherButtonTitles: nil];
+            [al show];
+        }
+        
+    }
+}
+
+- (void)cancel{
+    [_delegate openTableWithOptions:nil];
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    
+    //  判断输入的是否为数字 (只能输入数字)输入其他字符是不被允许的
+    
+    if([string isEqualToString:@""])
+    {
+        return YES;
+    }
+    else
+    {
+        if ([textField.text length]>=2) {
+            return NO;
+        }
+//        ^\d{m,n}$
+        
+        NSString *validRegEx =@"^[0-9]$";
+        
+        NSPredicate *regExPredicate =[NSPredicate predicateWithFormat:@"SELF MATCHES %@", validRegEx];
+        
+        BOOL myStringMatchesRegEx = [regExPredicate evaluateWithObject:string];
+        
+        if (myStringMatchesRegEx)
+            
+            return YES;
+        
+        else
+            
+            return NO;
+    }
+    
+}
+
+@end

@@ -1,0 +1,24 @@
+{
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "d0488cae-219d-7a44-96b1-c956348bde2d++1065" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "d0488cae-219d-7a44-96b1-c956348bde2d++1065" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "DC912FEF-2865-4355-BD3D-50C535612375",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "d0488cae-219d-7a44-96b1-c956348bde2d++1065" : "ChoiceiPad\/ChoiceiPad\/Log\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ChoiceiPad",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ChoiceiPad.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/115.238.164.148:433\/svn\/ChoiceIPAD",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "d0488cae-219d-7a44-96b1-c956348bde2d++1065"
+    }
+  ]
+}

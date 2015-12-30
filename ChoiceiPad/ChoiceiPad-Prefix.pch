@@ -1,0 +1,81 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "SVProgressHUD.h"
+#import "BSDataProvider.h"
+#import "CVLocalizationSetting.h"
+#endif
+
+#define Mode            [[NSUserDefaults standardUserDefaults] objectForKey:@"switch"]
+
+
+@interface NSString(PathExtensions)
+
+- (NSString *)documentPath;
+- (NSString *)hostName;
+- (NSDictionary *)account;
+- (NSString *)bundlePath;
+
+@end
+
+static void bs_dispatch_sync_on_main_thread(dispatch_block_t block) {
+    if ([NSThread isMainThread]) {
+        block();
+    } else {
+        dispatch_sync(dispatch_get_main_queue(), block);
+    }
+}
+
+@implementation NSString(PathExtensions)
+
+- (NSString *)documentPath{
+    NSArray *docPaths =  NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *docPath = [docPaths objectAtIndex:0];
+    NSString *path = [docPath stringByAppendingPathComponent:self];
+    return path;
+}
+
+- (NSString *)hostName{
+    //  @"ftp://shipader:shipader123@61.174.28.122/BookSystem/"
+    
+    NSString *str = [[[[self componentsSeparatedByString:@"://"] objectAtIndex:1] componentsSeparatedByString:@"/"] objectAtIndex:0];
+    NSArray *ary = [str componentsSeparatedByString:@"@"];
+    if (1==ary.count)
+        return str;
+    else
+        return [ary objectAtIndex:1];
+}
+
+- (NSDictionary *)account{
+    NSString *str = [[[[self componentsSeparatedByString:@"://"] objectAtIndex:1] componentsSeparatedByString:@"/"] objectAtIndex:0];
+    NSArray *ary = [str componentsSeparatedByString:@"@"];
+    if (1==ary.count)
+        return nil;
+    else{
+        NSString *strinfo = [ary objectAtIndex:0];
+        ary = [strinfo componentsSeparatedByString:@":"];
+        if (ary.count==2){
+            return [NSDictionary dictionaryWithObjectsAndKeys:[ary objectAtIndex:0],@"username",[ary objectAtIndex:1],@"password",nil];
+        }else
+            return nil;
+        
+    }
+}
+
+- (NSString *)bundlePath{
+    return [[NSBundle mainBundle] pathForResource:self ofType:nil];
+}
+
+@end
