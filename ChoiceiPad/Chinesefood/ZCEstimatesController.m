@@ -34,7 +34,7 @@
     
     UILabel *view=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 768, 80)];
     //    view.backgroundColor=[UIColor colorWithRed:188/255.0 green:0/255.0 blue:0/255.0 alpha:1];
-    view.text=@"估清设置";
+    view.text=@"沽清设置";
     view.textAlignment=NSTextAlignmentCenter;
     view.font=[UIFont boldSystemFontOfSize:30];
     view.backgroundColor=[UIColor clearColor];
@@ -108,6 +108,16 @@
         }
         [_allFoodArray addObjectsFromArray:foodArray];
     }
+    for (NSDictionary *foodDic in _searchArray) {
+        for (NSDictionary *code in _soldOutArray) {
+            if ([[code objectForKey:@"ITCODE"] isEqualToString:[foodDic objectForKey:@"ITCODE"]]) {
+                [foodDic setValue:[NSNumber numberWithBool:YES] forKey:@"SOLDOUT"];
+                [foodDic setValue:[code objectForKey:@"CNT"] forKey:@"SOLDOUTCNT"];
+                break;
+            }
+        }
+    }
+    
     bs_dispatch_sync_on_main_thread(^{
         [_tableView reloadData];
     });
@@ -206,9 +216,9 @@
 }
 -(void)ZCEstimatesCellClick:(NSDictionary *)info
 {
-    
+    [searchBar endEditing:YES];
     if ([[info objectForKey:@"TAG"] intValue]==100) {
-        UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"请输入估清数量" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"请输入沽清数量" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
         alert.alertViewStyle=UIAlertViewStylePlainTextInput;
         UITextField *tf1=[alert textFieldAtIndex:0];
         tf1.inputView  = [[[NSBundle mainBundle] loadNibNamed:@"LNHexNumberpad" owner:self options:nil] objectAtIndex:0];
@@ -216,7 +226,7 @@
         _foodDic=info;
     }else
     {
-        [SVProgressHUD showProgress:-1 status:@"设置估清中" maskType:SVProgressHUDMaskTypeBlack];
+        [SVProgressHUD showProgress:-1 status:@"设置沽清中" maskType:SVProgressHUDMaskTypeBlack];
         [NSThread detachNewThreadSelector:@selector(ZCEstimates:) toTarget:self withObject:info];
     }
 }
@@ -235,7 +245,7 @@
     if (buttonIndex==1) {
         UITextField *tf=[alertView textFieldAtIndex:0];
         [_foodDic setValue:tf.text forKey:@"cnt"];
-        [SVProgressHUD showProgress:-1 status:@"设置估清中" maskType:SVProgressHUDMaskTypeBlack];
+        [SVProgressHUD showProgress:-1 status:@"设置沽清中" maskType:SVProgressHUDMaskTypeBlack];
         [NSThread detachNewThreadSelector:@selector(ZCEstimates:) toTarget:self withObject:_foodDic];
     }
 }

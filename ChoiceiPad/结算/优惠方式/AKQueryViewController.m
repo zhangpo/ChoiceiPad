@@ -39,6 +39,9 @@
     AKAlipayView                    *_alipayView;
     BSPrintQueryView                *printQuery;
     AKPaySelectView                 *_paySelect;
+    NSString                        *_timestamp;    //时间戳
+    BOOL                            TAUTOLOGY_BOOL;
+    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -727,6 +730,8 @@
     if (info) {
         [SVProgressHUD showProgress:-1 status:[[CVLocalizationSetting sharedInstance]localizedString:@"load..."] maskType:SVProgressHUDMaskTypeBlack];
 //        NSDictionary *dict=[[NSDictionary alloc]initWithObjectsAndKeys:[info objectForKey:@"OPERATE"],@"paymentID",@"1",@"paymentCnt",[info objectForKey:@"paymentMoney"],@"paymentMoney",[[info objectForKey:@"paymentMoney"] floatValue]<_payabill?@"0":@"1",@"payFinish", nil];
+        
+        
         NSDictionary *dict=[[NSDictionary alloc]initWithObjectsAndKeys:[info objectForKey:@"OPERATE"],@"paymentID",@"1",@"paymentCnt",[info objectForKey:@"paymentMoney"],@"paymentMoney",@"0",@"payFinish", nil];
         [NSThread detachNewThreadSelector:@selector(userPayment:) toTarget:self withObject:dict];
     }
@@ -737,15 +742,28 @@
 #pragma mark - 现金银行卡支付
 -(void)userPayment:(NSDictionary *)info
 {
+    
+    if (!TAUTOLOGY_BOOL) {
+        NSDate *datenow = [NSDate date];//现在时间,你可以输出来看下是什么格式
+        _timestamp = [NSString stringWithFormat:@"%ld", (long)[datenow timeIntervalSince1970]];
+        [info setValue:_timestamp forKey:@"timestamp"];
+    }else{
+        TAUTOLOGY_BOOL=YES;
+    }
     BSDataProvider *dp=[[BSDataProvider alloc] init];
     NSDictionary *dict=[dp userPayment:info];
     [SVProgressHUD dismiss];
-    if ([[dict objectForKey:@"Result"]boolValue]==YES) {
-        [SVProgressHUD showSuccessWithStatus:[dict objectForKey:@"Message"]];
-        [self paymentViewQueryProduct];
-    }else
-    {
-        [SVProgressHUD showErrorWithStatus:[dict objectForKey:@"Message"]];
+    if (!dict) {
+        
+    }else{
+        
+        if ([[dict objectForKey:@"Result"]boolValue]==YES) {
+            [SVProgressHUD showSuccessWithStatus:[dict objectForKey:@"Message"]];
+            [self paymentViewQueryProduct];
+        }else
+        {
+            [SVProgressHUD showErrorWithStatus:[dict objectForKey:@"Message"]];
+        }
     }
 
 }

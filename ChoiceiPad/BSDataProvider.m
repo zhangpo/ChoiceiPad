@@ -2018,13 +2018,13 @@ static BSDataProvider *_BSDataProvider;
                         [dict setObject:[array objectAtIndex:1] forKey:@"price"];
                         
                         if ([str isEqualToString:[classArray objectAtIndex:1]]) {//折扣
-                            prict-=[[array objectAtIndex:1] floatValue];
+                            prict+=[[array objectAtIndex:1] floatValue];
                             [settlementArray addObject:dict];
                         }else if ([str isEqualToString:[classArray objectAtIndex:2]]){//服务
                             prict+=[[array objectAtIndex:1] floatValue];
                             [settlementArray addObject:dict];
                         }else if ([str isEqualToString:[classArray objectAtIndex:3]]){//免项
-                            prict-=[[array objectAtIndex:1] floatValue];
+                            prict+=[[array objectAtIndex:1] floatValue];
                             [settlementArray addObject:dict];
                         }else if ([str isEqualToString:[classArray objectAtIndex:4]]){//包间
                             prict+=[[array objectAtIndex:1] floatValue];
@@ -3700,7 +3700,7 @@ static BSDataProvider *_BSDataProvider;
     //pk_storeid:门店主键
     //vcode:台位号/台位缩写
     //    例子：(将13台换到15台）
-    //        http://192.168.0.236:8888/tableInfoController/changeSitedefinehand?sitedefines={"root":[{"pk_storeid":"c97221b714e14f91b8f4","vcode":"11"},{"pk_storeid":"c97221b714e14f91b8f4","vcode":"12"}]}
+    //        http:192.168.0.236:8888/tableInfoController/changeSitedefinehand?sitedefines={"root":[{"pk_storeid":"c97221b714e14f91b8f4","vcode":"11"},{"pk_storeid":"c97221b714e14f91b8f4","vcode":"12"}]}
     NSArray *array=[[NSArray alloc] initWithObjects:[info objectForKey:@"oldtable"],[info objectForKey:@"newtable"], nil];
     NSMutableArray *ary=[NSMutableArray array];
     for (NSString *table in array) {
@@ -4622,7 +4622,10 @@ static BSDataProvider *_BSDataProvider;
 }
 #pragma mark - 现金银行卡支付
 -(NSDictionary *)userPayment:(NSDictionary *)info{
-    NSString *strParam = [NSString stringWithFormat:@"?&deviceId=%@&userCode=%@&tableNum=%@&orderId=%@&paymentId=%@&paymentCnt=%@&mpaymentMoney=%@&payFinish=%@&integralOverall=%@&cardNumber=%@",[self padID],[[Singleton sharedSingleton].userInfo objectForKey:@"user" ],[Singleton sharedSingleton].Seat,[Singleton sharedSingleton].CheckNum,[NSString stringWithFormat:@"%@!",[info objectForKey:@"paymentID"]],[NSString stringWithFormat:@"%@!",[info objectForKey:@"paymentCnt"]],[NSString stringWithFormat:@"%@!",[info objectForKey:@"paymentMoney"]],[NSString stringWithFormat:@"0!%@",[info objectForKey:@"payFinish"]],[info objectForKey:@"integralOverall"],[info objectForKey:@"cardNumber"]==nil?@"":[info objectForKey:@"cardNumber"]];
+    
+    NSMutableDictionary *jsonDic=[[NSMutableDictionary alloc] init];
+    [jsonDic setObject:[info objectForKey:@"timestamp"] forKey:@"timestamp"];
+    NSString *strParam = [NSString stringWithFormat:@"?&deviceId=%@&userCode=%@&tableNum=%@&orderId=%@&paymentId=%@&paymentCnt=%@&mpaymentMoney=%@&payFinish=%@&integralOverall=%@&cardNumber=%@&json=%@",[self padID],[[Singleton sharedSingleton].userInfo objectForKey:@"user" ],[Singleton sharedSingleton].Seat,[Singleton sharedSingleton].CheckNum,[NSString stringWithFormat:@"%@!",[info objectForKey:@"paymentID"]],[NSString stringWithFormat:@"%@!",[info objectForKey:@"paymentCnt"]],[NSString stringWithFormat:@"%@!",[info objectForKey:@"paymentMoney"]],[NSString stringWithFormat:@"0!%@",[info objectForKey:@"payFinish"]],[info objectForKey:@"integralOverall"],[info objectForKey:@"cardNumber"]==nil?@"":[info objectForKey:@"cardNumber"],[jsonDic JSONRepresentation]];
     NSDictionary *dict = [self bsService:@"userPayment" arg:strParam];
     if (dict) {
         NSString *result = [[[dict objectForKey:@"ns:userPaymentResponse"] objectForKey:@"ns:return"] objectForKey:@"text"];
@@ -4635,7 +4638,7 @@ static BSDataProvider *_BSDataProvider;
         }
     }else
     {
-        return [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:NO],@"Result",@"支付失败",@"Message", nil];
+        return nil;
     }
 }
 #pragma mark - 活动查询

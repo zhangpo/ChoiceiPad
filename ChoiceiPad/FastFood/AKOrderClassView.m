@@ -29,7 +29,7 @@
 //        [scrollview addSubview:image];
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
         
-        flowLayout.itemSize = CGSizeMake(100, 60);
+        flowLayout.itemSize = CGSizeMake(120, 60);
         flowLayout.minimumInteritemSpacing =0;//列距
         flowLayout.minimumLineSpacing=2;
         

@@ -134,7 +134,8 @@
     }
     [self.view addSubview:view];
     //    tvOrder.tableHeaderView=view;
-    NSArray *array2=[[NSArray alloc] initWithObjects:[localization localizedString:@"Table"],[localization localizedString:@"Gogo"],[localization localizedString:@"Elide"],[localization localizedString:@"Add Food"],[localization localizedString:@"Chuck"],[localization localizedString:@"Print"],[localization localizedString:@"Settlement"],@"外送地址",[localization localizedString:@"Back"], nil];
+//    NSArray *array2=[[NSArray alloc] initWithObjects:[localization localizedString:@"Table"],[localization localizedString:@"Gogo"],[localization localizedString:@"Elide"],[localization localizedString:@"Add Food"],[localization localizedString:@"Chuck"],[localization localizedString:@"Print"],[localization localizedString:@"Settlement"],@"外送地址",[localization localizedString:@"Back"], nil];
+    NSArray *array2=[[NSArray alloc] initWithObjects:[localization localizedString:@"Table"],[localization localizedString:@"Gogo"],[localization localizedString:@"Elide"],[localization localizedString:@"Add Food"],[localization localizedString:@"Chuck"],[localization localizedString:@"Print"],[localization localizedString:@"Settlement"],[localization localizedString:@"Back"], nil];
     for (int i=0; i<[array2 count]; i++) {
         UIButton *btn=[UIButton buttonWithType:UIButtonTypeCustom];
         btn.frame=CGRectMake((768-20)/[array2 count]*i, 1024-70, 130, 50);
@@ -165,8 +166,6 @@
         }else if (i==6){
             [btn addTarget:self action:@selector(QueryView) forControlEvents:UIControlEventTouchUpInside];
         }else if (i==7){
-            [btn addTarget:self action:@selector(deliveryAddress) forControlEvents:UIControlEventTouchUpInside];
-        }else if (i==8){
             [btn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
         }
 

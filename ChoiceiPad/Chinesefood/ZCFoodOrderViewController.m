@@ -65,7 +65,7 @@
     flowLayout.minimumInteritemSpacing =2;//列距
     flowLayout.minimumLineSpacing=10;
     
-    _foodCV=[[UICollectionView alloc] initWithFrame:CGRectMake(100,170, 660, 740) collectionViewLayout:flowLayout];
+    _foodCV=[[UICollectionView alloc] initWithFrame:CGRectMake(120,170, 640, 740) collectionViewLayout:flowLayout];
     _foodCV.backgroundColor=[UIColor whiteColor];
     _foodCV.delegate=self;
     _foodCV.dataSource=self;
@@ -73,7 +73,7 @@
     [self.view addSubview:_foodCV];
     
     
-    _classView=[[AKOrderClassView alloc] initWithFrame:CGRectMake(0, 170, 100, 1024-190)];
+    _classView=[[AKOrderClassView alloc] initWithFrame:CGRectMake(0, 170, 120, 1024-190)];
     _classView.delegate=self;
     [self.view addSubview:_classView];
     
@@ -238,6 +238,7 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:@"postData" object:_selectArray];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"classData" object:_classArray];
     }
+    
     [_packageView removeFromSuperview];
     _packageView=nil;
 }
@@ -337,7 +338,7 @@
         [_foodDic setObject:additions forKey:@"addition"];
         [self addFood];
     }else{
-        _foodDic=nil;
+        [self cancelProduct];
     }
     
 }
@@ -537,6 +538,9 @@
             //            [_selectArray addObject:_dataDic];
             //继续判断别的
             [self necessaryAdditional];
+        }else
+        {
+            [self cancelProduct];
         }
     }else if (alertView.tag==5){
         if (buttonIndex==1) {
@@ -545,6 +549,8 @@
             [_foodDic setObject:textField.text forKey:@"DES"];
             [_foodDic setObject:textField1.text forKey:@"PRICE"];
             [self changeUnit];
+        }else{
+            [self cancelProduct];
         }
     }
 }

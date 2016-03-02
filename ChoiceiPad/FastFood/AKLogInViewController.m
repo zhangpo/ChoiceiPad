@@ -467,7 +467,8 @@
     else if (alertView.tag==3) {
         if (buttonIndex==1) {
             NSDate *datenow = [NSDate date];//现在时间,你可以输出来看下是什么格式
-            NSTimeZone *zone = [NSTimeZone timeZoneWithName:@"Asia/Beijing"];               NSInteger interval = [zone secondsFromGMTForDate:datenow]+60*60*24*3;
+            NSTimeZone *zone = [NSTimeZone timeZoneWithName:@"Asia/Beijing"];
+            NSInteger interval = [zone secondsFromGMTForDate:datenow]+60*60*24*3;
             NSDate *localeDate = [datenow  dateByAddingTimeInterval: interval];
             NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
             //设定时间格式,这里可以设置成自己需要的格式

@@ -20,14 +20,17 @@
 {
     self=[super initWithFrame:frame];
     if (self) {
-        _imageBG=[[UIImageView alloc] initWithFrame:CGRectMake(0,0, CGRectGetWidth(frame)-10, CGRectGetHeight(frame))];
+        _imageBG=[[UIImageView alloc] initWithFrame:CGRectMake(0,0, CGRectGetWidth(frame), CGRectGetHeight(frame))];
         [self addSubview:_imageBG];
-        _lblName=[[UILabel alloc] initWithFrame:CGRectMake(0,0, 70, CGRectGetHeight(frame))];
+        _lblName=[[UILabel alloc] initWithFrame:CGRectMake(0,0,CGRectGetWidth(frame)-30, CGRectGetHeight(frame))];
         _lblName.textAlignment=NSTextAlignmentLeft;
         _lblName.textColor=[UIColor whiteColor];
+        _lblName.numberOfLines=0;
+        _lblName.font=[UIFont fontWithName:@"ArialRoundedMTBold" size:20];
+        _lblName.lineBreakMode=NSLineBreakByWordWrapping;
         _lblName.backgroundColor=[UIColor clearColor];
         [self addSubview:_lblName];
-        _lblCount=[[UILabel alloc] initWithFrame:CGRectMake(70,20, 20, 20)];
+        _lblCount=[[UILabel alloc] initWithFrame:CGRectMake(CGRectGetWidth(frame)-30,20, 20, 20)];
         _lblCount.font = [UIFont boldSystemFontOfSize:12];
         _lblCount.backgroundColor=[UIColor clearColor];
         _lblCount.textColor=[UIColor redColor];

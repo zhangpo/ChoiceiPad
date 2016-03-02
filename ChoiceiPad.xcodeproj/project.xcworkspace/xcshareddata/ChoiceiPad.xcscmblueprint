@@ -1,24 +1,32 @@
 {
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "8457448E2B393A2EB4CC8DE4DAD8A4215E6B080A",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
-    "d0488cae-219d-7a44-96b1-c956348bde2d++1065" : {
+    "d0488cae-219d-7a44-96b1-c956348bde2d++9982" : {
 
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "d0488cae-219d-7a44-96b1-c956348bde2d++1065" : 0
+    "8457448E2B393A2EB4CC8DE4DAD8A4215E6B080A" : 0,
+    "d0488cae-219d-7a44-96b1-c956348bde2d++9982" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "DC912FEF-2865-4355-BD3D-50C535612375",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "d0488cae-219d-7a44-96b1-c956348bde2d++1065" : "ChoiceiPad\/ChoiceiPad\/Log\/"
+    "8457448E2B393A2EB4CC8DE4DAD8A4215E6B080A" : "ChoiceiPad\/",
+    "d0488cae-219d-7a44-96b1-c956348bde2d++9982" : "ChoiceiPad\/ChoiceiPad\/Log\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "ChoiceiPad",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ChoiceiPad.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/zhangpo\/ChoiceiPad.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8457448E2B393A2EB4CC8DE4DAD8A4215E6B080A"
+    },
+    {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/115.238.164.148:433\/svn\/ChoiceIPAD",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "d0488cae-219d-7a44-96b1-c956348bde2d++1065"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "d0488cae-219d-7a44-96b1-c956348bde2d++9982"
     }
   ]
 }

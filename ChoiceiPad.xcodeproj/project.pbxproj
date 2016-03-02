@@ -2363,6 +2363,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = zp;
 				TargetAttributes = {
+					1E29D3FA19E7669400A99BD2 = {
+						DevelopmentTeam = E4NKNX5EPN;
+					};
 					1E29D41519E7669400A99BD2 = {
 						TestTargetID = 1E29D3FA19E7669400A99BD2;
 					};
@@ -2831,8 +2834,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Dongqiang Lv (W32QLEPMLV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dongqiang Lv (W32QLEPMLV)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shandong Huaxia Liangzi Health Management Co., Ltd";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shandong Huaxia Liangzi Health Management Co., Ltd";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -2850,7 +2853,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
-				PROVISIONING_PROFILE = "2124a56e-65cc-4322-8c53-62b8e982ef59";
+				PROVISIONING_PROFILE = "bbf99194-00c5-4f47-8a8b-753a562dab35";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -2873,8 +2876,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Dongqiang Lv (W32QLEPMLV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dongqiang Lv (W32QLEPMLV)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shandong Huaxia Liangzi Health Management Co., Ltd";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shandong Huaxia Liangzi Health Management Co., Ltd";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2886,7 +2889,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
-				PROVISIONING_PROFILE = "2124a56e-65cc-4322-8c53-62b8e982ef59";
+				PROVISIONING_PROFILE = "bbf99194-00c5-4f47-8a8b-753a562dab35";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
@@ -2898,8 +2901,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Dongqiang Lv (W32QLEPMLV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dongqiang Lv (W32QLEPMLV)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shandong Huaxia Liangzi Health Management Co., Ltd";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shandong Huaxia Liangzi Health Management Co., Ltd";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2913,8 +2916,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ChoiceiPad/ZBarSDK",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hxlz.ujiacheng;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2124a56e-65cc-4322-8c53-62b8e982ef59";
+				PROVISIONING_PROFILE = "bbf99194-00c5-4f47-8a8b-753a562dab35";
 				TARGETED_DEVICE_FAMILY = 2;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -2926,8 +2930,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Dongqiang Lv (W32QLEPMLV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dongqiang Lv (W32QLEPMLV)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shandong Huaxia Liangzi Health Management Co., Ltd";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shandong Huaxia Liangzi Health Management Co., Ltd";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2941,8 +2945,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ChoiceiPad/ZBarSDK",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hxlz.ujiacheng;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2124a56e-65cc-4322-8c53-62b8e982ef59";
+				PROVISIONING_PROFILE = "bbf99194-00c5-4f47-8a8b-753a562dab35";
 				TARGETED_DEVICE_FAMILY = 2;
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -2954,8 +2959,8 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ChoiceiPad.app/ChoiceiPad";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Dongqiang Lv (W32QLEPMLV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dongqiang Lv (W32QLEPMLV)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shandong Huaxia Liangzi Health Management Co., Ltd";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shandong Huaxia Liangzi Health Management Co., Ltd";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -2969,7 +2974,7 @@
 				);
 				INFOPLIST_FILE = "ChoiceiPadTests/ChoiceiPadTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2124a56e-65cc-4322-8c53-62b8e982ef59";
+				PROVISIONING_PROFILE = "bbf99194-00c5-4f47-8a8b-753a562dab35";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -2980,8 +2985,8 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ChoiceiPad.app/ChoiceiPad";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Dongqiang Lv (W32QLEPMLV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dongqiang Lv (W32QLEPMLV)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shandong Huaxia Liangzi Health Management Co., Ltd";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shandong Huaxia Liangzi Health Management Co., Ltd";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -2991,7 +2996,7 @@
 				GCC_PREFIX_HEADER = "ChoiceiPad/ChoiceiPad-Prefix.pch";
 				INFOPLIST_FILE = "ChoiceiPadTests/ChoiceiPadTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2124a56e-65cc-4322-8c53-62b8e982ef59";
+				PROVISIONING_PROFILE = "bbf99194-00c5-4f47-8a8b-753a562dab35";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};

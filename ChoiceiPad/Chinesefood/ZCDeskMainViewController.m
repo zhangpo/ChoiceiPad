@@ -107,7 +107,7 @@ typedef enum{
     [segment addTarget:self action:@selector(segmentClick:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:segment];
     segment.selectedSegmentIndex = 0;
-    NSArray *array2=[[NSArray alloc] initWithObjects:[langSetting localizedString:@"Logout"],[langSetting localizedString:@"Change Table"],[langSetting localizedString:@"Select Order"],[langSetting localizedString:@"Change Man"],@"估清",[langSetting localizedString:@"Updata"], nil];
+    NSArray *array2=[[NSArray alloc] initWithObjects:[langSetting localizedString:@"Logout"],[langSetting localizedString:@"Change Table"],[langSetting localizedString:@"Select Order"],[langSetting localizedString:@"Change Man"],@"沽清",[langSetting localizedString:@"Updata"], nil];
     for (int i=0; i<[array2 count]; i++) {
         UIButton *btn=[UIButton buttonWithType:UIButtonTypeCustom];
         btn.frame=CGRectMake(150+(500)/[array2 count]*i, 1024-70, 140, 50);
